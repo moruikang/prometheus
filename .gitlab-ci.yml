@@ -1,0 +1,18 @@
+stages:
+    - publish
+
+
+publish:
+    stage: publish
+    when: manual
+    script:
+        - ls 
+        - mkdir -p prometheus-install
+        - mv README.md  blackbox_exporter  nginx_exporter  node_exporter  postgres_exporter  prometheus  rabbitmq_exporter  redis_exporter  tomcat_exporter prometheus-install 
+        - tar -zcvf prometheus-install-${CI_COMMIT_TAG}.tar.gz prometheus-install 
+        - scp prometheus-install-${CI_COMMIT_TAG}.tar.gz  root@172.18.2.25:/data/download/停车项目/
+    tags:
+        - pipeline
+    only:
+        - tags
+
