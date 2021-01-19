@@ -1,7 +1,7 @@
 ### 安装
 
 #### 在每一台需要监控的主机上 执行 install_node_exporter.sh 安装脚本
-##### node_exporter是主机指标收集器，用于手机主机CPU，Memory, Dsik，IO等metrics
+##### node_exporter是主机指标收集器，用于收集主机CPU，Memory, Dsik，IO等metrics
 
 ```
 $ sh  install_node_exporter.sh
